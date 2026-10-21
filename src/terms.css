@@ -1,0 +1,70 @@
+/* =====================================================================
+   TERMS & CONDITIONS PAGE (tc-*)   sandal-cream · tan · navy
+   Needs privacy.css (base look).  In main.jsx:  import './privacy.css'  then  import './terms.css'
+===================================================================== */
+
+/* quick-jump chips */
+.tc-chips { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 2.6rem }
+.tc-chips button { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem .95rem .55rem .6rem; border-radius: 999px; cursor: pointer;
+  background: rgba(255, 252, 247, .9); border: 1px solid rgba(201, 162, 115, .6); color: var(--navy);
+  font: 600 .88rem/1 'Outfit', sans-serif; transition: transform .3s cubic-bezier(.2, 1.3, .3, 1), background .3s, color .3s, box-shadow .3s;
+  animation: ppUp .7s calc(var(--i) * 45ms + .3s) cubic-bezier(.2, .8, .2, 1) backwards }
+.tc-chips button b { display: grid; place-items: center; min-width: 26px; height: 26px; border-radius: 50%; font: 800 .7rem/1 'Outfit', sans-serif; color: #fff;
+  background: linear-gradient(135deg, var(--tan-d), var(--tan)) }
+.tc-chips button:hover, .tc-chips button:focus-visible { transform: translateY(-3px); background: var(--navy); color: #fff; box-shadow: 0 12px 22px rgba(13, 37, 64, .25); outline: none }
+
+/* timeline of cards */
+.tc-list { position: relative; display: grid; gap: 1.5rem; padding-left: 3.4rem }
+.tc-list::before { content: ''; position: absolute; left: 1.05rem; top: 1rem; bottom: 1rem; width: 3px; border-radius: 3px;
+  background: linear-gradient(180deg, var(--tan), rgba(201, 162, 115, .15)) }
+.tc-sec { overflow: visible; scroll-margin-top: 100px; padding-top: 1.5rem }
+.tc-sec::before { border-radius: 24px 24px 0 0 }
+.tc-sec:first-child { grid-column: auto }
+.tc-node { position: absolute; left: -3.4rem; top: 1.35rem; display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 50%;
+  font: 800 .82rem/1 'Outfit', sans-serif; color: #fff; background: linear-gradient(135deg, var(--tan-d), var(--tan)); border: 3px solid var(--cream-1);
+  box-shadow: 0 8px 18px rgba(167, 127, 79, .4); transform: scale(0); transition: transform .6s .2s cubic-bezier(.2, 1.5, .3, 1) }
+.tc-sec.in .tc-node { transform: scale(1) }
+
+.tc-hd { display: flex; align-items: center; gap: .95rem; margin-bottom: 1rem }
+.tc-hd .pp-ico { margin: 0; flex: 0 0 auto; width: 48px; height: 48px }
+.pp .tc-hd h2 { margin: 0; font: 700 clamp(1.25rem, 2.2vw, 1.6rem)/1.2 'Outfit', sans-serif; letter-spacing: -.015em; color: var(--navy) }
+
+.pp .tc-lead, .pp .tc-after { margin: 0 0 .9rem; font: 500 1.06rem/1.75 'Outfit', sans-serif; color: var(--navy) }
+.pp .tc-after { margin: 1rem 0 0; padding: .9rem 1.1rem; border-radius: 14px; background: rgba(201, 162, 115, .16); border-left: 4px solid var(--tan-d) }
+
+/* bullets */
+.tc-ul { display: grid; gap: .75rem; margin: 0; padding: 0; list-style: none }
+.tc-ul li { position: relative; padding-left: 1.9rem; font: 400 1.05rem/1.75 'Outfit', sans-serif; color: var(--mute);
+  opacity: 0; transform: translateX(-16px); transition: opacity .6s calc(var(--i) * 90ms + .25s), transform .6s calc(var(--i) * 90ms + .25s) cubic-bezier(.2, .8, .2, 1) }
+.tc-ul li::before { content: ''; position: absolute; left: .15rem; top: .62em; width: 11px; height: 11px; border-radius: 0 50% 50% 50%; rotate: 45deg;
+  background: linear-gradient(135deg, var(--tan-d), var(--tan)); box-shadow: 0 0 0 4px rgba(201, 162, 115, .22) }
+.tc-sec.in .tc-ul li, .tc-sec.in .tc-defs > div { opacity: 1; transform: none }
+
+/* definitions */
+.tc-defs { display: grid; gap: .8rem; margin: 0 }
+.tc-defs > div { padding: .95rem 1.1rem; border-radius: 16px; background: rgba(255, 255, 255, .68); border: 1px solid rgba(201, 162, 115, .4);
+  opacity: 0; transform: translateY(16px); transition: opacity .6s calc(var(--i) * 90ms + .25s), transform .6s calc(var(--i) * 90ms + .25s) cubic-bezier(.2, .8, .2, 1), border-color .3s }
+.tc-defs > div:hover { border-color: var(--tan-d) }
+.tc-defs dt { margin: 0 0 .25rem; font: 700 1.02rem/1.4 'Outfit', sans-serif; color: var(--tan-d); word-break: break-word }
+.tc-defs dd { margin: 0; font: 400 1.04rem/1.7 'Outfit', sans-serif; color: var(--mute) }
+
+/* address */
+.tc-addr { display: grid; gap: .25rem; padding: 1.1rem 1.3rem; border-radius: 16px; font: 400 1.06rem/1.6 'Outfit', sans-serif; font-style: normal; color: var(--mute);
+  background: rgba(255, 255, 255, .7); border: 1px dashed var(--tan) }
+.tc-addr b { color: var(--navy); font-weight: 700; font-size: 1.12rem }
+
+.pp .tc-sec a, .tc-ul a, .tc-defs a { color: var(--teal); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; word-break: break-word }
+.tc-sec a:hover { color: var(--tan-d) }
+
+@media (max-width: 720px) {
+  .tc-list { padding-left: 2.6rem }
+  .tc-list::before { left: .8rem }
+  .tc-node { left: -2.6rem; width: 2.1rem; height: 2.1rem; font-size: .72rem }
+  .tc-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: .6rem; scrollbar-width: thin; margin-right: -4% }
+  .tc-chips button { flex: 0 0 auto }
+  .tc-ul li { padding-left: 1.6rem }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tc-ul li, .tc-defs > div { opacity: 1; transform: none; transition: none }
+  .tc-node { transform: none; transition: none }
+}

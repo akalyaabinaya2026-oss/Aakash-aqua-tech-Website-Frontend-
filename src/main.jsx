@@ -1,0 +1,30 @@
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+import { installLinkInterceptor, migrateHashUrl } from './router.js'
+import { installTracking } from './track.js'
+import './index.css'
+import './hero.css'
+import './products.css'
+import './about.css'
+import './about-page.css'
+import './brands.css'
+import './shop.css'
+import './spares.css'
+import './sand.css'
+import './zones.css'
+import './testimonials.css'
+import './privacy.css'
+import './terms.css'
+import './service.css'
+import './shipping.css'
+import './theme.css'
+import './polish.css'
+import './cart.css'
+import './contact.css'
+import './account.css'
+
+migrateHashUrl()
+installLinkInterceptor()
+installTracking()
+createRoot(document.getElementById('root')).render(<App />)
